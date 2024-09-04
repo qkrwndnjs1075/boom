@@ -1,6 +1,6 @@
 package com.example.dmc.global.config;
 
-import com.example.spring.global.security.jwt.JwtTokenProvider;
+import com.example.dmc.global.security.jwt.JwtTokenProvider;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
