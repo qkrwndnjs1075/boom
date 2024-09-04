@@ -4,17 +4,11 @@ import com.example.dmc.domain.auth.domain.RefreshToken;
 import com.example.dmc.domain.auth.domain.repository.RefreshTokenRepository;
 import com.example.dmc.domain.auth.exception.ExpiredTokenException;
 import com.example.dmc.domain.auth.exception.InValidTokenException;
-import com.example.dmc.domain.presentation.dto.response.LoginResponse;
+import com.example.dmc.domain.auth.presentation.dto.response.LoginResponse;
 import com.example.dmc.domain.user.domain.User;
 import com.example.dmc.domain.user.domain.repository.UserRepository;
 import com.example.dmc.domain.user.exception.UserNotFoundException;
 import com.example.dmc.global.security.auth.AuthDetailsService;
-import com.example.spring.domain.auth.domain.repository.RefreshTokenRepository;
-import com.example.spring.domain.auth.domain.RefreshToken;
-import com.example.spring.domain.auth.exception.ExpiredTokenException;
-import com.example.spring.domain.auth.exception.InValidTokenException;
-import com.example.spring.domain.user.domain.repository.UserRepository;
-import com.example.spring.global.security.auth.AuthDetailsService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -77,7 +71,7 @@ public class JwtTokenProvider {
 
     public Authentication getAuthentication(String token){
         Claims claims = getClaims(token);
-        UserDetails userDetails =authDetailsService.loadUserByAccountId(claims.getSubject());
+        UserDetails userDetails =authDetailsService.loadUserByUsername(claims.getSubject());
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
 
     }
