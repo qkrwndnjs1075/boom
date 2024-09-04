@@ -1,4 +1,4 @@
-package com.example.dmc.domain.presentation.dto.response;
+package com.example.dmc.domain.auth.presentation.dto.response;
 
 import lombok.Builder;
 
