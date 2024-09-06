@@ -117,6 +117,14 @@ public class JwtTokenProvider {
         return null;
     }
 
+    public long getExpiration(String token) {
+        Claims claims = getClaims(token);
+        return claims.getExpiration().getTime() - new Date().getTime();
+    }
+    public String getSubjectFromToken(String token) {
+        return getClaims(token).getSubject();
+    }
+
 
 
 }
