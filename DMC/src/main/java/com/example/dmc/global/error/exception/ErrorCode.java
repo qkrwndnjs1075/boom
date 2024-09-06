@@ -23,7 +23,7 @@ public enum ErrorCode {
     USER_ALREADY_TAKEN(401, "이미 유저가 있습니다"),
 
     //page
-    PAGE_NOT_FOUND(404,"게시글이 존재하지 않습니다");
+    PAGE_NOT_FOUND(404,"게시글이 존재하지 않습니다"),
 
 
     // general
