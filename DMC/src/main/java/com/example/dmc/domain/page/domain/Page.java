@@ -13,7 +13,7 @@ public class Page {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String pageId;
+    private Long pageId;
 
     private String title;
 
@@ -21,12 +21,14 @@ public class Page {
 
     private String author;
 
-    @Column(name = "club_image_url",columnDefinition = "TEXT")
+    @Column(name = "page_image_url",columnDefinition = "TEXT")
     private String pageImageUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+
 
 
 
